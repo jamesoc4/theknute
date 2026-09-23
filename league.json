@@ -1,0 +1,145 @@
+{
+  "season": 2026,
+  "conferences": [
+    "B1G",
+    "SEC",
+    "MAC",
+    "ACC"
+  ],
+  "countChampionshipGames": false,
+  "overrides": {},
+  "players": [
+    {
+      "name": "Luke",
+      "nd": 475,
+      "teams": [
+        [
+          "Ohio State",
+          194
+        ],
+        [
+          "Alabama",
+          333
+        ],
+        [
+          "Miami (OH)",
+          193
+        ],
+        [
+          "Virginia Tech",
+          259
+        ]
+      ]
+    },
+    {
+      "name": "BGToe",
+      "nd": 490,
+      "teams": [
+        [
+          "Michigan",
+          130
+        ],
+        [
+          "LSU",
+          99
+        ],
+        [
+          "Western Michigan",
+          2711
+        ],
+        [
+          "Miami",
+          2390
+        ]
+      ]
+    },
+    {
+      "name": "Patrick",
+      "nd": 510,
+      "teams": [
+        [
+          "Indiana",
+          84
+        ],
+        [
+          "Ole Miss",
+          145
+        ],
+        [
+          "Bowling Green",
+          189
+        ],
+        [
+          "SMU",
+          2567
+        ]
+      ]
+    },
+    {
+      "name": "KBO",
+      "nd": 515,
+      "teams": [
+        [
+          "Oregon",
+          2483
+        ],
+        [
+          "Texas",
+          251
+        ],
+        [
+          "Ohio",
+          195
+        ],
+        [
+          "Clemson",
+          228
+        ]
+      ]
+    },
+    {
+      "name": "Jamie",
+      "nd": 507,
+      "teams": [
+        [
+          "USC",
+          30
+        ],
+        [
+          "Texas A&M",
+          245
+        ],
+        [
+          "Toledo",
+          2649
+        ],
+        [
+          "Virginia",
+          258
+        ]
+      ]
+    },
+    {
+      "name": "Leemur",
+      "nd": 497,
+      "teams": [
+        [
+          "Penn State",
+          213
+        ],
+        [
+          "Georgia",
+          61
+        ],
+        [
+          "Sacramento State",
+          16
+        ],
+        [
+          "Louisville",
+          97
+        ]
+      ]
+    }
+  ]
+}

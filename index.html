@@ -23,7 +23,7 @@
   .player { background: var(--card); border: 1px solid var(--line); border-radius: 12px;
     margin-bottom: 10px; overflow: hidden; }
   .head { display: flex; align-items: center; gap: 12px; padding: 12px 14px; cursor: pointer; }
-  .rank { width: 28px; font-weight: 700; font-size: 18px; color: var(--muted); text-align: center; }
+  .rank { width: 34px; font-weight: 700; font-size: 18px; color: var(--muted); text-align: center; }
   .player.first .rank { color: var(--gold); }
   .name { font-weight: 700; font-size: 17px; flex: 1; }
   .tb { color: var(--muted); font-size: 12px; font-weight: 400; margin-left: 6px; }
@@ -55,34 +55,17 @@
 <body>
 <main>
   <h1>The Knute Leaderboard</h1>
-  <div class="sub">1 point per conference win · tiebreaker: ND points guess ·
+  <div class="sub">1 point per conference win · ties share a rank ·
     <span id="status">Loading…</span><button id="refresh">Refresh</button></div>
   <div id="board"></div>
 </main>
 
 <script>
-// ---- League setup (edit here) ----------------------------------------------
-// ESPN team IDs. Order per player: B1G, SEC, MAC, ACC.
-const SEASON = 2026;
-const PLAYERS = [
-  { name: "Luke",    nd: 475, teams: [["Ohio State", 194], ["Alabama", 333], ["Miami (OH)", 193], ["Virginia Tech", 259]] },
-  { name: "BGToe",   nd: 490, teams: [["Michigan", 130], ["LSU", 99], ["Western Michigan", 2711], ["Miami", 2390]] },
-  { name: "Patrick", nd: 510, teams: [["Indiana", 84], ["Ole Miss", 145], ["Bowling Green", 189], ["SMU", 2567]] },
-  { name: "KBO",     nd: 515, teams: [["Oregon", 2483], ["Texas", 251], ["Ohio", 195], ["Clemson", 228]] },
-  { name: "Jamie",   nd: 507, teams: [["USC", 30], ["Texas A&M", 245], ["Toledo", 2649], ["Virginia", 258]] },
-  { name: "Leemur",  nd: 497, teams: [["Penn State", 213], ["Georgia", 61], ["Sacramento State", 16], ["Louisville", 97]] },
-];
-const CONFS = ["B1G", "SEC", "MAC", "ACC"];
-// Conference title games count as conference wins? Default: regular season only.
-const COUNT_CHAMPIONSHIP_GAMES = false;
-// Actual ND points total once known — ties are then broken by closest guess.
-const ND_ACTUAL = null;
-// Manual fixes if ESPN data is wrong: { teamId: conferenceWins }
-const OVERRIDES = {};
-// -----------------------------------------------------------------------------
+// League setup lives in league.json; scores in data.json (refreshed hourly by
+// .github/workflows/update.yml from ESPN).
+const CONF_CLASS = ["B1G", "SEC", "MAC", "ACC"];
+let league, data;
 
-const API = id => `https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/${id}/schedule?season=${SEASON}`;
-const cache = {};
 // ESPN logo, with the dark-background variant in dark mode. Falls back to the
 // team name if the image fails to load (or hides, when the name is already shown).
 const logo = (id, team, fallback = true) => `<picture>
@@ -91,89 +74,66 @@ const logo = (id, team, fallback = true) => `<picture>
     onerror="this.closest('picture').outerHTML='${fallback ? `<span class=&quot;t&quot;>${team}</span>` : ""}'">
 </picture>`;
 
-async function loadTeam(id) {
-  const res = await fetch(API(id), { cache: "no-store" });
-  if (!res.ok) throw new Error(`HTTP ${res.status}`);
-  const data = await res.json();
-  const games = [];
-  for (const ev of data.events || []) {
-    const comp = ev.competitions?.[0];
-    if (!comp || !comp.conferenceCompetition) continue;
-    const isTitle = (comp.notes || []).some(n => /championship/i.test(n.headline || ""))
-      || ev.seasonType?.type === 3;
-    if (isTitle && !COUNT_CHAMPIONSHIP_GAMES) continue;
-    const us = comp.competitors.find(c => String(c.team?.id) === String(id));
-    const them = comp.competitors.find(c => c !== us);
-    if (!us || !them) continue;
-    const done = !!comp.status?.type?.completed;
-    const score = c => c.score?.displayValue ?? c.score ?? "";
-    games.push({
-      date: new Date(ev.date),
-      opp: them.team?.shortDisplayName || them.team?.displayName || "?",
-      home: us.homeAway === "home",
-      done,
-      win: done && us.winner === true,
-      loss: done && us.winner === false,
-      score: done ? `${score(us)}-${score(them)}` : "",
-    });
-  }
-  games.sort((a, b) => a.date - b.date);
-  const w = games.filter(g => g.win).length;
-  const l = games.filter(g => g.loss).length;
-  return { games, w: OVERRIDES[id] ?? w, l, error: null };
-}
-
 async function loadAll() {
-  document.getElementById("status").textContent = "Loading…";
-  const ids = PLAYERS.flatMap(p => p.teams.map(t => t[1]));
-  await Promise.all(ids.map(async id => {
-    try { cache[id] = await loadTeam(id); }
-    catch (e) { cache[id] = { games: [], w: OVERRIDES[id] ?? 0, l: 0, error: e.message }; }
-  }));
+  const status = document.getElementById("status");
+  status.textContent = "Loading…";
+  try {
+    const bust = "?t=" + Date.now();
+    [league, data] = await Promise.all([
+      fetch("league.json" + bust).then(r => r.json()),
+      fetch("data.json" + bust).then(r => r.ok ? r.json() : { teams: {} }),
+    ]);
+  } catch (e) {
+    status.textContent = "Couldn't load scores";
+    return;
+  }
   render();
-  document.getElementById("status").textContent =
-    "Updated " + new Date().toLocaleTimeString([], { hour: "numeric", minute: "2-digit" });
+  status.textContent = data.updated
+    ? "Updated " + new Date(data.updated).toLocaleString([], { month: "short", day: "numeric", hour: "numeric", minute: "2-digit" })
+    : "No scores yet";
 }
 
 function render() {
-  const rows = PLAYERS.map(p => ({
+  const teams = data.teams || {};
+  const rows = league.players.map(p => ({
     ...p,
-    total: p.teams.reduce((s, [, id]) => s + (cache[id]?.w || 0), 0),
+    total: p.teams.reduce((s, [, id]) => s + (teams[id]?.w || 0), 0),
   }));
-  rows.sort((a, b) => b.total - a.total
-    || (ND_ACTUAL != null ? Math.abs(a.nd - ND_ACTUAL) - Math.abs(b.nd - ND_ACTUAL) : 0));
+  // Rank by wins only; equal totals share a rank.
+  rows.sort((a, b) => b.total - a.total || a.name.localeCompare(b.name));
+  const count = {};
+  rows.forEach(r => count[r.total] = (count[r.total] || 0) + 1);
 
   const open = new Set([...document.querySelectorAll(".player.open")].map(e => e.dataset.name));
   const board = document.getElementById("board");
   board.innerHTML = "";
-  let rank = 0, prev = null;
+  let rank = 0;
   rows.forEach((p, i) => {
-    const key = ND_ACTUAL != null ? `${p.total}|${Math.abs(p.nd - ND_ACTUAL)}` : `${p.total}`;
-    if (key !== prev) rank = i + 1;
-    prev = key;
+    if (i === 0 || p.total !== rows[i - 1].total) rank = i + 1;
+    const tied = count[p.total] > 1;
     const el = document.createElement("div");
     el.className = "player" + (rank === 1 ? " first" : "") + (open.has(p.name) ? " open" : "");
     el.dataset.name = p.name;
     el.innerHTML = `
       <div class="head">
-        <div class="rank">${rank}</div>
+        <div class="rank">${tied ? "T" : ""}${rank}</div>
         <div class="name">${p.name}<span class="tb">ND ${p.nd}</span></div>
         <div class="pts">${p.total}<small>pts</small></div>
       </div>
       <div class="teams">${p.teams.map(([team, id], j) => {
-        const t = cache[id] || {};
-        return `<div class="team ${CONFS[j]}">${logo(id, team)}
-          <div class="r">${t.error ? `<span class="err">no data</span>`
-            : `<span class="w">${t.w ?? 0}</span>-${t.l ?? 0} conf`}</div></div>`;
+        const t = teams[id];
+        return `<div class="team ${CONF_CLASS[j]}">${logo(id, team)}
+          <div class="r">${!t || t.error ? `<span class="err">no data</span>`
+            : `<span class="w">${t.w}</span>-${t.l} conf`}</div></div>`;
       }).join("")}</div>
       <div class="games">${p.teams.map(([team, id], j) => {
-        const t = cache[id] || { games: [] };
+        const t = teams[id] || { games: [] };
         const list = t.games.map(g => `<li>
           <span class="res ${g.win ? "W" : g.loss ? "L" : "up"}">${g.win ? "W" : g.loss ? "L" : "·"}</span>
           <span>${g.home ? "vs" : "@"} ${g.opp}</span>
-          <span class="up">${g.done ? g.score : g.date.toLocaleDateString([], { month: "short", day: "numeric" })}</span>
+          <span class="up">${g.done ? g.score : new Date(g.date).toLocaleDateString([], { month: "short", day: "numeric" })}</span>
         </li>`).join("");
-        return `<h4>${logo(id, team, false)}${CONFS[j]} · ${team}</h4><ul>${list || `<li class="up">${t.error ? "Couldn't load: " + t.error : "No conference games found"}</li>`}</ul>`;
+        return `<h4>${logo(id, team, false)}${CONF_CLASS[j]} · ${team}</h4><ul>${list || `<li class="up">${t.error ? "Couldn't load: " + t.error : "No conference games yet"}</li>`}</ul>`;
       }).join("")}</div>`;
     el.querySelector(".head").onclick = () => el.classList.toggle("open");
     board.appendChild(el);
