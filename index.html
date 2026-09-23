@@ -29,10 +29,14 @@
   .tb { color: var(--muted); font-size: 12px; font-weight: 400; margin-left: 6px; }
   .pts { font-weight: 800; font-size: 26px; font-variant-numeric: tabular-nums; }
   .pts small { font-size: 12px; font-weight: 500; color: var(--muted); margin-left: 2px; }
-  .teams { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--line); }
+  .teams { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: 1px solid var(--line); }
   .team { padding: 8px 10px; border-left: 4px solid; font-size: 13px; }
   .team + .team { border-right: 0; }
-  .team .t { font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .team { display: flex; flex-direction: column; align-items: center; gap: 4px; text-align: center; }
+  .team .t { font-weight: 600; font-size: 12px; line-height: 1.2; min-height: 44px; display: flex; align-items: center; overflow-wrap: break-word; }
+  .logo { width: 44px; height: 44px; object-fit: contain; display: block; }
+  .games h4 .logo { width: 20px; height: 20px; }
+  .games h4 { display: flex; align-items: center; gap: 6px; }
   .team .r { color: var(--muted); font-variant-numeric: tabular-nums; }
   .team .w { font-weight: 700; color: var(--text); }
   .B1G { border-color: var(--b1g); } .SEC { border-color: var(--sec); }
@@ -46,9 +50,6 @@
   .games .W { color: #2e8b3e; } .games .L { color: #c0392b; }
   .games .up { color: var(--muted); }
   .err { color: #c0392b; font-size: 12px; }
-  @media (max-width: 560px) {
-    .teams { grid-template-columns: repeat(2, 1fr); }
-  }
 </style>
 </head>
 <body>
@@ -82,6 +83,13 @@ const OVERRIDES = {};
 
 const API = id => `https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/${id}/schedule?season=${SEASON}`;
 const cache = {};
+// ESPN logo, with the dark-background variant in dark mode. Falls back to the
+// team name if the image fails to load (or hides, when the name is already shown).
+const logo = (id, team, fallback = true) => `<picture>
+  <source srcset="https://a.espncdn.com/i/teamlogos/ncaa/500-dark/${id}.png" media="(prefers-color-scheme: dark)">
+  <img class="logo" src="https://a.espncdn.com/i/teamlogos/ncaa/500/${id}.png" alt="${team}" title="${team}"
+    onerror="this.closest('picture').outerHTML='${fallback ? `<span class=&quot;t&quot;>${team}</span>` : ""}'">
+</picture>`;
 
 async function loadTeam(id) {
   const res = await fetch(API(id), { cache: "no-store" });
@@ -154,7 +162,7 @@ function render() {
       </div>
       <div class="teams">${p.teams.map(([team, id], j) => {
         const t = cache[id] || {};
-        return `<div class="team ${CONFS[j]}"><div class="t">${team}</div>
+        return `<div class="team ${CONFS[j]}">${logo(id, team)}
           <div class="r">${t.error ? `<span class="err">no data</span>`
             : `<span class="w">${t.w ?? 0}</span>-${t.l ?? 0} conf`}</div></div>`;
       }).join("")}</div>
@@ -165,7 +173,7 @@ function render() {
           <span>${g.home ? "vs" : "@"} ${g.opp}</span>
           <span class="up">${g.done ? g.score : g.date.toLocaleDateString([], { month: "short", day: "numeric" })}</span>
         </li>`).join("");
-        return `<h4>${CONFS[j]} · ${team}</h4><ul>${list || `<li class="up">${t.error ? "Couldn't load: " + t.error : "No conference games found"}</li>`}</ul>`;
+        return `<h4>${logo(id, team, false)}${CONFS[j]} · ${team}</h4><ul>${list || `<li class="up">${t.error ? "Couldn't load: " + t.error : "No conference games found"}</li>`}</ul>`;
       }).join("")}</div>`;
     el.querySelector(".head").onclick = () => el.classList.toggle("open");
     board.appendChild(el);
