@@ -50,6 +50,11 @@
   .games .W { color: #2e8b3e; } .games .L { color: #c0392b; }
   .games .up { color: var(--muted); }
   .err { color: #c0392b; font-size: 12px; }
+  .nd { background: var(--nd); color: #fff; border-radius: 12px; padding: 14px 16px;
+    margin-bottom: 14px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+  .nd .label { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: var(--gold); }
+  .nd .sub2 { display: block; font-size: 12px; opacity: .8; margin-top: 2px; }
+  .nd .val { font-size: 36px; font-weight: 800; font-variant-numeric: tabular-nums; line-height: 1; }
 </style>
 </head>
 <body>
@@ -57,11 +62,15 @@
   <h1>The Knute Leaderboard</h1>
   <div class="sub">1 point per conference win · ties share a rank ·
     <span id="status">Loading…</span><button id="refresh">Refresh</button></div>
+  <section class="nd" aria-live="polite">
+    <div><span class="label">ND Total Points</span><span class="sub2" id="nd-games"></span></div>
+    <div class="val" id="nd-points">–</div>
+  </section>
   <div id="board"></div>
 </main>
 
 <script>
-// League setup lives in league.json; scores in data.json (refreshed hourly by
+// League setup lives in league.json; scores in data.json (refreshed nightly by
 // .github/workflows/update.yml from ESPN).
 const CONF_CLASS = ["B1G", "SEC", "MAC", "ACC"];
 let league, data;
@@ -94,6 +103,11 @@ async function loadAll() {
 }
 
 function render() {
+  const nd = data.nd;
+  document.getElementById("nd-points").textContent = nd && !nd.error ? nd.points : "–";
+  document.getElementById("nd-games").textContent = nd && !nd.error
+    ? `Notre Dame · ${nd.games} game${nd.games === 1 ? "" : "s"} played` : "Notre Dame · not loaded yet";
+
   const teams = data.teams || {};
   const rows = league.players.map(p => ({
     ...p,

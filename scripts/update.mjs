@@ -98,6 +98,29 @@ for (const p of league.players) {
   }
 }
 
+// Notre Dame's total points scored this season (the tiebreaker), regular
+// season plus any bowl/playoff games.
+const ND_ID = 87;
+const nd = { points: 0, games: 0, error: null };
+const seen = new Set();
+try {
+  for (const seasontype of [2, 3]) {
+    const data = await get(`${BASE}/site/v2/sports/football/college-football/teams/${ND_ID}/schedule?season=${league.season}&seasontype=${seasontype}`);
+    for (const ev of data.events || []) {
+      const comp = ev.competitions?.[0];
+      if (!comp?.status?.type?.completed || seen.has(ev.id)) continue;
+      seen.add(ev.id);
+      const us = comp.competitors?.find(c => String(c.team?.id) === String(ND_ID));
+      if (!us) continue;
+      nd.points += Number(us.score?.value ?? us.score?.displayValue ?? us.score ?? 0);
+      nd.games += 1;
+    }
+  }
+} catch (e) {
+  nd.error = e.message;
+}
+console.log(`Notre Dame: ${nd.points} points in ${nd.games} games${nd.error ? " ERROR " + nd.error : ""}`);
+
 await writeFile(new URL("../data.json", import.meta.url),
-  JSON.stringify({ updated: new Date().toISOString(), teams }, null, 1) + "\n");
+  JSON.stringify({ updated: new Date().toISOString(), nd, teams }, null, 1) + "\n");
 console.log("wrote data.json");

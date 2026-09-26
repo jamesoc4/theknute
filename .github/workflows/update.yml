@@ -1,8 +1,10 @@
 name: Update scores
 
 on:
+  # Nightly at 2am US Eastern. GitHub cron is UTC and ignores daylight saving,
+  # so run at both 06:00 and 07:00 UTC: one of them is always 2am Eastern.
   schedule:
-    - cron: "0 * * * *"
+    - cron: "0 6,7 * * *"
   workflow_dispatch:
 
 permissions:
