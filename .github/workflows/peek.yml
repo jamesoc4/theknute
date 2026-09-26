@@ -1,9 +1,12 @@
 name: Peek reference site (temporary)
 on: workflow_dispatch
+permissions:
+  contents: write
 jobs:
   peek:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
       - run: |
           npm i -g playwright@1 >/dev/null 2>&1 && npx playwright install --with-deps chromium >/dev/null 2>&1
           cat > s.js <<'JS'
@@ -14,16 +17,14 @@ jobs:
               const p = await b.newPage({ viewport: { width: w, height: 900 }, deviceScaleFactor: 1 });
               await p.goto('https://nflwins2.com/', { waitUntil: 'networkidle', timeout: 60000 });
               await p.waitForTimeout(3000);
-              await p.screenshot({ path: name + '.jpg', type: 'jpeg', quality: 55, fullPage: true });
+              await p.screenshot({ path: '.peek/' + name + '.jpg', type: 'jpeg', quality: 70, fullPage: true });
               if (name === 'desktop') {
-                console.log('=====HTML=====');
-                console.log(await p.content());
-                console.log('=====TEXT=====');
-                console.log(await p.evaluate(() => document.body.innerText));
+                require('fs').writeFileSync('.peek/page.html', await p.content());
+                require('fs').writeFileSync('.peek/page.txt', await p.evaluate(() => document.body.innerText));
               }
             }
             await b.close();
           })();
           JS
-          NODE_PATH=$(npm root -g) node s.js
-          for f in desktop mobile; do echo "=====IMG $f====="; base64 -w 200 $f.jpg; echo "=====END $f====="; done
+          mkdir -p .peek && NODE_PATH=$(npm root -g) node s.js
+          git add .peek && git -c user.name="github-actions[bot]" -c user.email="41898699+github-actions[bot]@users.noreply.github.com" commit -m "Temporary reference capture" && git push
