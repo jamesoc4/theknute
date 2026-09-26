@@ -3,88 +3,156 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>The Knute Leaderboard</title>
+<title>The Knute</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #f4f5f7; --card: #fff; --text: #16181d; --muted: #6b7280; --line: #e3e5ea;
-    --b1g: #b3261e; --sec: #e0302a; --mac: #6b4a1e; --acc: #3f7d2b; --nd: #1d3a6b; --gold: #c9a227;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root { --bg: #0f1115; --card: #181b21; --text: #eceef2; --muted: #9aa1ad; --line: #2a2e36; }
+    color-scheme: dark;
+    --bg: #07111f; --panel: #0d1829; --panel-2: #111e32; --line: #1d2b42;
+    --text: #eef2f8; --muted: #8b9ab1; --dim: #5f6f88;
+    --orange: #f7913d; --gold: #f5c542; --win: #4cc38a; --loss: #ef6b6b;
+    --b1g: #d03a32; --sec: #3a6fd8; --mac: #a0763a; --acc: #3fa35b;
+    --display: "Barlow Condensed", "Arial Narrow", system-ui, sans-serif;
+    --body: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   }
   * { box-sizing: border-box; }
-  body { margin: 0; background: var(--bg); color: var(--text);
-    font: 15px/1.4 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
-  main { max-width: 760px; margin: 0 auto; padding: 20px 16px 48px; }
-  h1 { font-size: 24px; margin: 0 0 4px; }
-  .sub { color: var(--muted); font-size: 13px; margin-bottom: 16px; }
-  .sub button { font: inherit; color: inherit; background: none; border: 1px solid var(--line);
-    border-radius: 6px; padding: 2px 8px; margin-left: 6px; cursor: pointer; }
-  .player { background: var(--card); border: 1px solid var(--line); border-radius: 12px;
-    margin-bottom: 10px; overflow: hidden; }
-  .head { display: flex; align-items: center; gap: 12px; padding: 12px 14px; cursor: pointer; }
-  .rank { width: 34px; font-weight: 700; font-size: 18px; color: var(--muted); text-align: center; }
-  .player.first .rank { color: var(--gold); }
-  .name { font-weight: 700; font-size: 17px; flex: 1; }
-  .tb { color: var(--muted); font-size: 12px; font-weight: 400; margin-left: 6px; }
-  .pts { font-weight: 800; font-size: 26px; font-variant-numeric: tabular-nums; }
-  .pts small { font-size: 12px; font-weight: 500; color: var(--muted); margin-left: 2px; }
-  .teams { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: 1px solid var(--line); }
-  .team { padding: 8px 10px; border-left: 4px solid; font-size: 13px; }
-  .team + .team { border-right: 0; }
-  .team { display: flex; flex-direction: column; align-items: center; gap: 4px; text-align: center; }
-  .team .t { font-weight: 600; font-size: 12px; line-height: 1.2; min-height: 44px; display: flex; align-items: center; overflow-wrap: break-word; }
-  .logo { width: 44px; height: 44px; object-fit: contain; display: block; }
-  .games h4 .logo { width: 20px; height: 20px; }
-  .games h4 { display: flex; align-items: center; gap: 6px; }
-  .team .r { color: var(--muted); font-variant-numeric: tabular-nums; }
-  .team .w { font-weight: 700; color: var(--text); }
-  .B1G { border-color: var(--b1g); } .SEC { border-color: var(--sec); }
-  .MAC { border-color: var(--mac); } .ACC { border-color: var(--acc); }
-  .games { display: none; border-top: 1px solid var(--line); padding: 8px 14px 12px; font-size: 13px; }
-  .player.open .games { display: block; }
-  .games h4 { margin: 10px 0 4px; font-size: 12px; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); }
-  .games ul { list-style: none; margin: 0; padding: 0; }
-  .games li { display: flex; gap: 8px; padding: 2px 0; font-variant-numeric: tabular-nums; }
-  .games .res { width: 16px; font-weight: 700; }
-  .games .W { color: #2e8b3e; } .games .L { color: #c0392b; }
-  .games .up { color: var(--muted); }
-  .err { color: #c0392b; font-size: 12px; }
-  .nd { background: var(--nd); color: #fff; border-radius: 12px; padding: 14px 16px;
-    margin-bottom: 14px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
-  .nd .label { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: var(--gold); }
-  .nd .sub2 { display: block; font-size: 12px; opacity: .8; margin-top: 2px; }
-  .nd .val { font-size: 36px; font-weight: 800; font-variant-numeric: tabular-nums; line-height: 1; }
+  html { background: var(--bg); }
+  body { margin: 0; min-height: 100vh; color: var(--text); font: 14px/1.45 var(--body);
+    background: radial-gradient(1200px 600px at 0% -10%, #12325a 0%, transparent 60%), var(--bg); }
+  main { max-width: 900px; margin: 0 auto; padding: 24px 16px 48px; }
+
+  .topbar { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 22px; }
+  .eyebrow { font: 700 13px/1 var(--display); letter-spacing: .18em; text-transform: uppercase; color: var(--orange); }
+  h1 { font: 800 clamp(30px, 7vw, 42px)/1 var(--display); text-transform: uppercase; letter-spacing: .01em; margin: 6px 0 0; }
+  .status { display: flex; gap: 10px; align-items: center; background: var(--panel); border: 1px solid var(--line);
+    border-radius: 12px; padding: 8px 12px; color: var(--text); font: inherit; cursor: pointer; text-align: left; max-width: 190px; }
+  .status:focus-visible, .row:focus-visible { outline: 2px solid var(--orange); outline-offset: 2px; }
+  .status b { display: block; font-size: 13px; font-weight: 600; }
+  .status small { display: block; font-size: 11px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .dot { width: 10px; height: 10px; border-radius: 50%; background: var(--gold); flex: none;
+    box-shadow: 0 0 0 4px rgba(245,197,66,.18); }
+  .status.loading .dot { animation: pulse 1s ease-in-out infinite; }
+  @keyframes pulse { 50% { opacity: .35; } }
+  @media (prefers-reduced-motion: reduce) { .status.loading .dot { animation: none; } }
+
+  .nd { display: flex; justify-content: space-between; align-items: center; gap: 16px;
+    background: linear-gradient(100deg, #0c2340 0%, #13315a 100%); border: 1px solid #25476f;
+    border-radius: 14px; padding: 16px 20px; margin-bottom: 26px; }
+  .nd h2 { margin: 0; font: 700 22px/1 var(--display); text-transform: uppercase; letter-spacing: .04em; color: var(--gold); }
+  .nd p { margin: 6px 0 0; color: #b8c6da; font-size: 13px; }
+  .nd .val { font: 800 52px/1 var(--display); color: var(--gold); font-variant-numeric: tabular-nums; }
+
+  .section-head { display: flex; justify-content: space-between; align-items: baseline; margin: 0 2px 10px; }
+  .section-head h2 { margin: 0; font: 700 24px/1 var(--display); text-transform: uppercase; letter-spacing: .03em; }
+  .section-head span { color: var(--muted); font-size: 13px; }
+
+  .table { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; }
+  .cols { display: grid; grid-template-columns: 48px minmax(0, 1fr) 20px 64px 64px; align-items: center; gap: 8px; }
+  .thead { padding: 14px 12px; color: var(--muted); font-size: 13px; border-bottom: 1px solid var(--line); background: var(--panel-2); }
+  .thead .num { text-align: center; line-height: 1.2; }
+  .thead .place { font: inherit; color: inherit; }
+  .row { padding: 14px 12px; border-bottom: 1px solid var(--line); cursor: pointer; }
+  .player:last-child .row { border-bottom: 0; }
+  .player.open .row { border-bottom: 1px solid var(--line); }
+  .row:hover { background: rgba(255,255,255,.025); }
+  .leader .row { background: linear-gradient(90deg, rgba(247,145,61,.10), rgba(247,145,61,0) 60%); }
+  .place { text-align: center; font: 700 16px/1 var(--display); color: var(--muted); }
+  .leader .place { color: var(--orange); font-size: 19px; }
+  .name { font-weight: 600; font-size: 15px; }
+  .logos { display: flex; gap: 8px; margin-top: 6px; }
+  .logos img, .logos .fb { width: 26px; height: 26px; object-fit: contain; }
+  .fb { display: inline-grid; place-items: center; font-size: 9px; font-weight: 700; color: var(--muted);
+    border: 1px solid var(--line); border-radius: 50%; }
+  .chev { color: var(--muted); transition: transform .2s; text-align: center; }
+  .open .chev { transform: rotate(180deg); }
+  .num { text-align: center; font-variant-numeric: tabular-nums; }
+  .wins { font: 800 22px/1 var(--display); color: var(--orange); }
+  .guess { color: var(--muted); font-weight: 500; }
+
+  .detail { display: none; padding: 6px 12px 14px; background: #0a1424; }
+  .open .detail { display: block; }
+  .team { display: grid; grid-template-columns: 32px 1fr auto; gap: 10px; align-items: center;
+    padding: 10px 4px 6px; }
+  .games + .team { border-top: 1px solid var(--line); }
+  .team img, .team .fb { width: 30px; height: 30px; object-fit: contain; }
+  .team .tn { font-weight: 600; }
+  .conf { display: inline-block; margin-left: 6px; font: 700 11px/1 var(--display); letter-spacing: .08em;
+    padding: 3px 6px 2px; border-radius: 4px; color: #fff; vertical-align: 1px; }
+  .B1G { background: var(--b1g); } .SEC { background: var(--sec); } .MAC { background: var(--mac); } .ACC { background: var(--acc); }
+  .rec { font-variant-numeric: tabular-nums; color: var(--muted); }
+  .rec b { color: var(--text); font: 800 18px/1 var(--display); }
+  .games { list-style: none; margin: 0 0 6px 42px; padding: 0; font-size: 13px; }
+  .games li { display: grid; grid-template-columns: 16px 1fr auto; gap: 8px; padding: 2px 0; color: #c3cedf; font-variant-numeric: tabular-nums; }
+  .games .W { color: var(--win); font-weight: 700; } .games .L { color: var(--loss); font-weight: 700; }
+  .games .up, .games .when { color: var(--dim); }
+
+  footer { margin-top: 22px; text-align: center; color: var(--dim); font-size: 12px; line-height: 1.6; }
+
+  @media (max-width: 520px) {
+    .cols { grid-template-columns: 34px minmax(0, 1fr) 16px 50px 44px; gap: 6px; }
+    .logos { gap: 6px; } .logos img, .logos .fb { width: 24px; height: 24px; }
+    .nd .val { font-size: 44px; }
+    .status { max-width: 150px; }
+  }
 </style>
 </head>
 <body>
 <main>
-  <h1>The Knute Leaderboard</h1>
-  <div class="sub">1 point per conference win · ties share a rank ·
-    <span id="status">Loading…</span><button id="refresh">Refresh</button></div>
+  <header class="topbar">
+    <div>
+      <div class="eyebrow" id="season">College Football</div>
+      <h1>The Knute</h1>
+    </div>
+    <button class="status loading" id="refresh" type="button" aria-label="Reload standings">
+      <span class="dot"></span>
+      <span><b>Standings</b><small id="status">Loading…</small></span>
+    </button>
+  </header>
+
   <section class="nd" aria-live="polite">
-    <div><span class="label">ND Total Points</span><span class="sub2" id="nd-games"></span></div>
+    <div>
+      <h2>ND Total Points</h2>
+      <p id="nd-games">Notre Dame · season total</p>
+    </div>
     <div class="val" id="nd-points">–</div>
   </section>
-  <div id="board"></div>
+
+  <div class="section-head">
+    <h2>Standings</h2>
+    <span>Tap a player for details</span>
+  </div>
+  <div class="table">
+    <div class="thead cols">
+      <span class="place">Place</span><span>Player</span><span></span>
+      <span class="num">ND<br>guess</span><span class="num">Conf<br>wins</span>
+    </div>
+    <div id="board"></div>
+  </div>
+
+  <footer>
+    1 point per regular-season conference win. Players with the same total are tied.<br>
+    ND total points guess is the tiebreaker. Records refresh nightly at 2am ET from ESPN.
+  </footer>
 </main>
 
 <script>
 // League setup lives in league.json; scores in data.json (refreshed nightly by
 // .github/workflows/update.yml from ESPN).
-const CONF_CLASS = ["B1G", "SEC", "MAC", "ACC"];
+const CONFS = ["B1G", "SEC", "MAC", "ACC"];
 let league, data;
 
-// ESPN logo, with the dark-background variant in dark mode. Falls back to the
-// team name if the image fails to load (or hides, when the name is already shown).
-const logo = (id, team, fallback = true) => `<picture>
-  <source srcset="https://a.espncdn.com/i/teamlogos/ncaa/500-dark/${id}.png" media="(prefers-color-scheme: dark)">
-  <img class="logo" src="https://a.espncdn.com/i/teamlogos/ncaa/500/${id}.png" alt="${team}" title="${team}"
-    onerror="this.closest('picture').outerHTML='${fallback ? `<span class=&quot;t&quot;>${team}</span>` : ""}'">
-</picture>`;
+// ESPN logo (dark-background variant); swaps to a small initials badge if it fails.
+const initials = team => team.replace(/[^A-Z&]/g, "").slice(0, 3) || team.slice(0, 2);
+const logo = (id, team) =>
+  `<img src="https://a.espncdn.com/i/teamlogos/ncaa/500-dark/${id}.png" alt="${team}" title="${team}" loading="lazy"
+    onerror="this.outerHTML='<span class=&quot;fb&quot; title=&quot;${team}&quot;>${initials(team)}</span>'">`;
 
 async function loadAll() {
+  const btn = document.getElementById("refresh");
   const status = document.getElementById("status");
+  btn.classList.add("loading");
   status.textContent = "Loading…";
   try {
     const bust = "?t=" + Date.now();
@@ -94,15 +162,18 @@ async function loadAll() {
     ]);
   } catch (e) {
     status.textContent = "Couldn't load scores";
+    btn.classList.remove("loading");
     return;
   }
   render();
+  btn.classList.remove("loading");
   status.textContent = data.updated
     ? "Updated " + new Date(data.updated).toLocaleString([], { month: "short", day: "numeric", hour: "numeric", minute: "2-digit" })
     : "No scores yet";
 }
 
 function render() {
+  document.getElementById("season").textContent = `${league.season} Season`;
   const nd = data.nd;
   document.getElementById("nd-points").textContent = nd && !nd.error ? nd.points : "–";
   document.getElementById("nd-games").textContent = nd && !nd.error
@@ -124,32 +195,37 @@ function render() {
   let rank = 0;
   rows.forEach((p, i) => {
     if (i === 0 || p.total !== rows[i - 1].total) rank = i + 1;
-    const tied = count[p.total] > 1;
     const el = document.createElement("div");
-    el.className = "player" + (rank === 1 ? " first" : "") + (open.has(p.name) ? " open" : "");
+    el.className = "player" + (rank === 1 ? " leader" : "") + (open.has(p.name) ? " open" : "");
     el.dataset.name = p.name;
     el.innerHTML = `
-      <div class="head">
-        <div class="rank">${tied ? "T" : ""}${rank}</div>
-        <div class="name">${p.name}<span class="tb">ND ${p.nd}</span></div>
-        <div class="pts">${p.total}<small>pts</small></div>
+      <div class="row cols" role="button" tabindex="0" aria-expanded="${open.has(p.name)}">
+        <span class="place">${count[p.total] > 1 ? "T" : ""}${rank}</span>
+        <span>
+          <div class="name">${p.name}</div>
+          <div class="logos">${p.teams.map(([team, id]) => logo(id, team)).join("")}</div>
+        </span>
+        <span class="chev">⌄</span>
+        <span class="num guess">${p.nd}</span>
+        <span class="num wins">${p.total}</span>
       </div>
-      <div class="teams">${p.teams.map(([team, id], j) => {
-        const t = teams[id];
-        return `<div class="team ${CONF_CLASS[j]}">${logo(id, team)}
-          <div class="r">${!t || t.error ? `<span class="err">no data</span>`
-            : `<span class="w">${t.w}</span>-${t.l} conf`}</div></div>`;
-      }).join("")}</div>
-      <div class="games">${p.teams.map(([team, id], j) => {
+      <div class="detail">${p.teams.map(([team, id], j) => {
         const t = teams[id] || { games: [] };
         const list = t.games.map(g => `<li>
-          <span class="res ${g.win ? "W" : g.loss ? "L" : "up"}">${g.win ? "W" : g.loss ? "L" : "·"}</span>
+          <span class="${g.win ? "W" : g.loss ? "L" : "up"}">${g.win ? "W" : g.loss ? "L" : "·"}</span>
           <span>${g.home ? "vs" : "@"} ${g.opp}</span>
-          <span class="up">${g.done ? g.score : new Date(g.date).toLocaleDateString([], { month: "short", day: "numeric" })}</span>
+          <span class="when">${g.done ? g.score : new Date(g.date).toLocaleDateString([], { month: "short", day: "numeric" })}</span>
         </li>`).join("");
-        return `<h4>${logo(id, team, false)}${CONF_CLASS[j]} · ${team}</h4><ul>${list || `<li class="up">${t.error ? "Couldn't load: " + t.error : "No conference games yet"}</li>`}</ul>`;
+        return `<div class="team">${logo(id, team)}
+            <div><span class="tn">${team}</span><span class="conf ${CONFS[j]}">${CONFS[j]}</span></div>
+            <div class="rec">${t.error || !teams[id] ? "no data" : `<b>${t.w}</b>–${t.l}`}</div>
+          </div>
+          <ul class="games">${list || `<li><span></span><span class="up">No conference games yet</span></li>`}</ul>`;
       }).join("")}</div>`;
-    el.querySelector(".head").onclick = () => el.classList.toggle("open");
+    const row = el.querySelector(".row");
+    const toggle = () => { el.classList.toggle("open"); row.setAttribute("aria-expanded", el.classList.contains("open")); };
+    row.onclick = toggle;
+    row.onkeydown = e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); toggle(); } };
     board.appendChild(el);
   });
 }
