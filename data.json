@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-28T12:22:32.991Z",
+ "updated": "2026-09-29T11:48:49.064Z",
  "nd": {
   "points": 169,
   "games": 4,
@@ -31,7 +31,7 @@
      "score": "6-35"
     },
     {
-     "date": "2026-10-10T04:00Z",
+     "date": "2026-10-10T16:00Z",
      "opp": "Bowling Green",
      "home": false,
      "done": false,
@@ -122,7 +122,7 @@
      "score": ""
     },
     {
-     "date": "2026-10-10T04:00Z",
+     "date": "2026-10-10T23:30Z",
      "opp": "Penn State",
      "home": false,
      "done": false,
@@ -213,7 +213,7 @@
      "score": ""
     },
     {
-     "date": "2026-10-10T04:00Z",
+     "date": "2026-10-10T23:30Z",
      "opp": "Alabama",
      "home": false,
      "done": false,
@@ -295,7 +295,7 @@
      "score": ""
     },
     {
-     "date": "2026-10-10T04:00Z",
+     "date": "2026-10-10T16:00Z",
      "opp": "Nebraska",
      "home": false,
      "done": false,
@@ -477,7 +477,7 @@
      "score": "35-6"
     },
     {
-     "date": "2026-10-10T04:00Z",
+     "date": "2026-10-10T23:00Z",
      "opp": "Kentucky",
      "home": false,
      "done": false,
@@ -659,7 +659,7 @@
      "score": "28-52"
     },
     {
-     "date": "2026-10-10T04:00Z",
+     "date": "2026-10-10T19:30Z",
      "opp": "Vanderbilt",
      "home": false,
      "done": false,
@@ -741,7 +741,7 @@
      "score": ""
     },
     {
-     "date": "2026-10-10T04:00Z",
+     "date": "2026-10-10T16:00Z",
      "opp": "Sacramento St",
      "home": true,
      "done": false,
@@ -823,7 +823,7 @@
      "score": ""
     },
     {
-     "date": "2026-10-10T04:00Z",
+     "date": "2026-10-10T18:00Z",
      "opp": "UMass",
      "home": false,
      "done": false,
@@ -914,7 +914,7 @@
      "score": ""
     },
     {
-     "date": "2026-10-10T04:00Z",
+     "date": "2026-10-10T20:15Z",
      "opp": "Maryland",
      "home": true,
      "done": false,
@@ -996,7 +996,7 @@
      "score": ""
     },
     {
-     "date": "2026-10-10T04:00Z",
+     "date": "2026-10-10T19:30Z",
      "opp": "C Michigan",
      "home": true,
      "done": false,
@@ -1087,7 +1087,7 @@
      "score": ""
     },
     {
-     "date": "2026-10-10T04:00Z",
+     "date": "2026-10-10T23:30Z",
      "opp": "USC",
      "home": true,
      "done": false,
@@ -1442,7 +1442,7 @@
      "score": ""
     },
     {
-     "date": "2026-10-10T04:00Z",
+     "date": "2026-10-10T23:30Z",
      "opp": "Syracuse",
      "home": true,
      "done": false,
@@ -1533,7 +1533,7 @@
      "score": ""
     },
     {
-     "date": "2026-10-10T04:00Z",
+     "date": "2026-10-10T19:30Z",
      "opp": "California",
      "home": false,
      "done": false,
@@ -1633,7 +1633,7 @@
      "score": ""
     },
     {
-     "date": "2026-10-10T04:00Z",
+     "date": "2026-10-10T23:30Z",
      "opp": "Georgia",
      "home": true,
      "done": false,
@@ -1797,7 +1797,7 @@
      "score": "41-27"
     },
     {
-     "date": "2026-10-10T04:00Z",
+     "date": "2026-10-10T19:30Z",
      "opp": "UCLA",
      "home": true,
      "done": false,
@@ -1979,7 +1979,7 @@
      "score": ""
     },
     {
-     "date": "2026-10-10T04:00Z",
+     "date": "2026-10-10T19:30Z",
      "opp": "Buffalo",
      "home": true,
      "done": false,
@@ -2061,7 +2061,7 @@
      "score": ""
     },
     {
-     "date": "2026-10-10T04:00Z",
+     "date": "2026-10-10T19:30Z",
      "opp": "Kent State",
      "home": true,
      "done": false,
