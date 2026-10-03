@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-02T11:35:29.191Z",
+ "updated": "2026-10-03T10:49:27.690Z",
  "nd": {
   "points": 169,
   "games": 4,
@@ -1066,7 +1066,7 @@
    "name": "Penn State",
    "conf": "B1G",
    "w": 0,
-   "l": 1,
+   "l": 2,
    "games": [
     {
      "date": "2026-09-26T21:00Z",
@@ -1081,10 +1081,10 @@
      "date": "2026-10-03T00:00Z",
      "opp": "Northwestern",
      "home": false,
-     "done": false,
+     "done": true,
      "win": false,
-     "loss": false,
-     "score": ""
+     "loss": true,
+     "score": "13-34"
     },
     {
      "date": "2026-10-10T23:30Z",
@@ -1512,7 +1512,7 @@
    "name": "Virginia Tech",
    "conf": "ACC",
    "w": 1,
-   "l": 0,
+   "l": 1,
    "games": [
     {
      "date": "2026-09-26T16:00Z",
@@ -1527,10 +1527,10 @@
      "date": "2026-10-02T23:00Z",
      "opp": "Pitt",
      "home": true,
-     "done": false,
+     "done": true,
      "win": false,
-     "loss": false,
-     "score": ""
+     "loss": true,
+     "score": "33-35"
     },
     {
      "date": "2026-10-10T19:30Z",
