@@ -1,8 +1,8 @@
 {
- "updated": "2026-10-03T10:49:27.690Z",
+ "updated": "2026-10-04T11:31:20.057Z",
  "nd": {
-  "points": 169,
-  "games": 4,
+  "points": 206,
+  "games": 5,
   "error": null
  },
  "teams": {
@@ -91,7 +91,7 @@
   "30": {
    "name": "USC",
    "conf": "B1G",
-   "w": 1,
+   "w": 2,
    "l": 1,
    "games": [
     {
@@ -116,10 +116,10 @@
      "date": "2026-10-03T23:30Z",
      "opp": "Washington",
      "home": true,
-     "done": false,
-     "win": false,
+     "done": true,
+     "win": true,
      "loss": false,
-     "score": ""
+     "score": "25-21"
     },
     {
      "date": "2026-10-10T23:30Z",
@@ -182,7 +182,7 @@
   "61": {
    "name": "Georgia",
    "conf": "SEC",
-   "w": 2,
+   "w": 3,
    "l": 0,
    "games": [
     {
@@ -207,10 +207,10 @@
      "date": "2026-10-03T16:45Z",
      "opp": "Vanderbilt",
      "home": true,
-     "done": false,
-     "win": false,
+     "done": true,
+     "win": true,
      "loss": false,
-     "score": ""
+     "score": "38-14"
     },
     {
      "date": "2026-10-10T23:30Z",
@@ -273,7 +273,7 @@
   "84": {
    "name": "Indiana",
    "conf": "B1G",
-   "w": 1,
+   "w": 2,
    "l": 0,
    "games": [
     {
@@ -289,10 +289,10 @@
      "date": "2026-10-04T00:00Z",
      "opp": "Rutgers",
      "home": false,
-     "done": false,
-     "win": false,
+     "done": true,
+     "win": true,
      "loss": false,
-     "score": ""
+     "score": "47-15"
     },
     {
      "date": "2026-10-10T16:00Z",
@@ -365,7 +365,7 @@
    "name": "Louisville",
    "conf": "ACC",
    "w": 1,
-   "l": 1,
+   "l": 2,
    "games": [
     {
      "date": "2026-09-19T19:30Z",
@@ -389,10 +389,10 @@
      "date": "2026-10-03T19:30Z",
      "opp": "NC State",
      "home": false,
-     "done": false,
+     "done": true,
      "win": false,
-     "loss": false,
-     "score": ""
+     "loss": true,
+     "score": "28-31"
     },
     {
      "date": "2026-10-09T23:00Z",
@@ -547,7 +547,7 @@
    "name": "Michigan",
    "conf": "B1G",
    "w": 0,
-   "l": 1,
+   "l": 2,
    "games": [
     {
      "date": "2026-09-26T19:30Z",
@@ -562,10 +562,10 @@
      "date": "2026-10-03T16:00Z",
      "opp": "Minnesota",
      "home": false,
-     "done": false,
+     "done": true,
      "win": false,
-     "loss": false,
-     "score": ""
+     "loss": true,
+     "score": "14-20"
     },
     {
      "date": "2026-10-17T04:00Z",
@@ -728,17 +728,17 @@
   "189": {
    "name": "Bowling Green",
    "conf": "MAC",
-   "w": 0,
+   "w": 1,
    "l": 0,
    "games": [
     {
      "date": "2026-10-03T19:30Z",
      "opp": "Miami OH",
      "home": false,
-     "done": false,
-     "win": false,
+     "done": true,
+     "win": true,
      "loss": false,
-     "score": ""
+     "score": "24-20"
     },
     {
      "date": "2026-10-10T16:00Z",
@@ -811,16 +811,16 @@
    "name": "Miami (OH)",
    "conf": "MAC",
    "w": 0,
-   "l": 0,
+   "l": 1,
    "games": [
     {
      "date": "2026-10-03T19:30Z",
      "opp": "Bowling Green",
      "home": true,
-     "done": false,
+     "done": true,
      "win": false,
-     "loss": false,
-     "score": ""
+     "loss": true,
+     "score": "20-24"
     },
     {
      "date": "2026-10-10T18:00Z",
@@ -892,7 +892,7 @@
   "194": {
    "name": "Ohio State",
    "conf": "B1G",
-   "w": 1,
+   "w": 2,
    "l": 0,
    "games": [
     {
@@ -908,10 +908,10 @@
      "date": "2026-10-03T19:30Z",
      "opp": "Iowa",
      "home": false,
-     "done": false,
-     "win": false,
+     "done": true,
+     "win": true,
      "loss": false,
-     "score": ""
+     "score": "31-14"
     },
     {
      "date": "2026-10-10T20:15Z",
@@ -983,17 +983,17 @@
   "195": {
    "name": "Ohio",
    "conf": "MAC",
-   "w": 0,
+   "w": 1,
    "l": 0,
    "games": [
     {
      "date": "2026-10-03T19:30Z",
      "opp": "Kent State",
      "home": false,
-     "done": false,
-     "win": false,
+     "done": true,
+     "win": true,
      "loss": false,
-     "score": ""
+     "score": "13-10"
     },
     {
      "date": "2026-10-10T19:30Z",
@@ -1157,7 +1157,7 @@
    "name": "Clemson",
    "conf": "ACC",
    "w": 2,
-   "l": 0,
+   "l": 1,
    "games": [
     {
      "date": "2026-09-19T16:00Z",
@@ -1181,10 +1181,10 @@
      "date": "2026-10-03T23:30Z",
      "opp": "Miami",
      "home": true,
-     "done": false,
+     "done": true,
      "win": false,
-     "loss": false,
-     "score": ""
+     "loss": true,
+     "score": "13-41"
     },
     {
      "date": "2026-10-24T04:00Z",
@@ -1238,7 +1238,7 @@
   "245": {
    "name": "Texas A&M",
    "conf": "SEC",
-   "w": 0,
+   "w": 1,
    "l": 2,
    "games": [
     {
@@ -1263,13 +1263,13 @@
      "date": "2026-10-03T23:00Z",
      "opp": "Arkansas",
      "home": true,
-     "done": false,
-     "win": false,
+     "done": true,
+     "win": true,
      "loss": false,
-     "score": ""
+     "score": "34-7"
     },
     {
-     "date": "2026-10-10T04:00Z",
+     "date": "2026-10-10T16:00Z",
      "opp": "Missouri",
      "home": false,
      "done": false,
@@ -1421,7 +1421,7 @@
    "name": "Virginia",
    "conf": "ACC",
    "w": 1,
-   "l": 0,
+   "l": 1,
    "games": [
     {
      "date": "2026-08-29T19:30Z",
@@ -1436,10 +1436,10 @@
      "date": "2026-10-03T19:30Z",
      "opp": "Florida St",
      "home": false,
-     "done": false,
+     "done": true,
      "win": false,
-     "loss": false,
-     "score": ""
+     "loss": true,
+     "score": "7-38"
     },
     {
      "date": "2026-10-10T23:30Z",
@@ -1602,7 +1602,7 @@
   "333": {
    "name": "Alabama",
    "conf": "SEC",
-   "w": 2,
+   "w": 3,
    "l": 0,
    "games": [
     {
@@ -1627,10 +1627,10 @@
      "date": "2026-10-03T16:00Z",
      "opp": "Mississippi St",
      "home": false,
-     "done": false,
-     "win": false,
+     "done": true,
+     "win": true,
      "loss": false,
-     "score": ""
+     "score": "56-23"
     },
     {
      "date": "2026-10-10T23:30Z",
@@ -1693,7 +1693,7 @@
   "2390": {
    "name": "Miami",
    "conf": "ACC",
-   "w": 2,
+   "w": 3,
    "l": 0,
    "games": [
     {
@@ -1718,10 +1718,10 @@
      "date": "2026-10-03T23:30Z",
      "opp": "Clemson",
      "home": false,
-     "done": false,
-     "win": false,
+     "done": true,
+     "win": true,
      "loss": false,
-     "score": ""
+     "score": "41-13"
     },
     {
      "date": "2026-10-17T04:00Z",
@@ -1875,7 +1875,7 @@
   "2567": {
    "name": "SMU",
    "conf": "ACC",
-   "w": 1,
+   "w": 2,
    "l": 1,
    "games": [
     {
@@ -1900,10 +1900,10 @@
      "date": "2026-10-03T16:00Z",
      "opp": "Boston College",
      "home": true,
-     "done": false,
-     "win": false,
+     "done": true,
+     "win": true,
      "loss": false,
-     "score": ""
+     "score": "25-16"
     },
     {
      "date": "2026-10-17T04:00Z",
@@ -1966,17 +1966,17 @@
   "2649": {
    "name": "Toledo",
    "conf": "MAC",
-   "w": 0,
+   "w": 1,
    "l": 0,
    "games": [
     {
      "date": "2026-10-03T18:00Z",
      "opp": "Ball State",
      "home": false,
-     "done": false,
-     "win": false,
+     "done": true,
+     "win": true,
      "loss": false,
-     "score": ""
+     "score": "39-24"
     },
     {
      "date": "2026-10-10T19:30Z",
@@ -2048,17 +2048,17 @@
   "2711": {
    "name": "Western Michigan",
    "conf": "MAC",
-   "w": 0,
+   "w": 1,
    "l": 0,
    "games": [
     {
      "date": "2026-10-03T17:00Z",
      "opp": "Buffalo",
      "home": false,
-     "done": false,
-     "win": false,
+     "done": true,
+     "win": true,
      "loss": false,
-     "score": ""
+     "score": "20-17"
     },
     {
      "date": "2026-10-10T19:30Z",
