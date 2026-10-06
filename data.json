@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-05T13:02:22.679Z",
+ "updated": "2026-10-06T12:26:04.143Z",
  "nd": {
   "points": 206,
   "games": 5,
@@ -40,7 +40,7 @@
      "score": ""
     },
     {
-     "date": "2026-10-17T04:00Z",
+     "date": "2026-10-18T02:00Z",
      "opp": "Ohio",
      "home": true,
      "done": false,
@@ -222,7 +222,7 @@
      "score": ""
     },
     {
-     "date": "2026-10-17T04:00Z",
+     "date": "2026-10-17T19:30Z",
      "opp": "Auburn",
      "home": true,
      "done": false,
@@ -404,7 +404,7 @@
      "score": ""
     },
     {
-     "date": "2026-10-17T04:00Z",
+     "date": "2026-10-17T23:30Z",
      "opp": "Syracuse",
      "home": false,
      "done": false,
@@ -486,7 +486,7 @@
      "score": ""
     },
     {
-     "date": "2026-10-17T04:00Z",
+     "date": "2026-10-17T16:00Z",
      "opp": "Mississippi St",
      "home": true,
      "done": false,
@@ -668,7 +668,7 @@
      "score": ""
     },
     {
-     "date": "2026-10-17T04:00Z",
+     "date": "2026-10-17T19:30Z",
      "opp": "Missouri",
      "home": true,
      "done": false,
@@ -750,7 +750,7 @@
      "score": ""
     },
     {
-     "date": "2026-10-17T04:00Z",
+     "date": "2026-10-17T16:00Z",
      "opp": "Ball State",
      "home": true,
      "done": false,
@@ -832,7 +832,7 @@
      "score": ""
     },
     {
-     "date": "2026-10-17T04:00Z",
+     "date": "2026-10-17T19:30Z",
      "opp": "Akron",
      "home": true,
      "done": false,
@@ -1005,7 +1005,7 @@
      "score": ""
     },
     {
-     "date": "2026-10-17T04:00Z",
+     "date": "2026-10-18T02:00Z",
      "opp": "Sacramento St",
      "home": false,
      "done": false,
@@ -1351,7 +1351,7 @@
      "score": ""
     },
     {
-     "date": "2026-10-17T04:00Z",
+     "date": "2026-10-17T16:00Z",
      "opp": "Florida",
      "home": true,
      "done": false,
@@ -1451,7 +1451,7 @@
      "score": ""
     },
     {
-     "date": "2026-10-17T04:00Z",
+     "date": "2026-10-17T16:00Z",
      "opp": "SMU",
      "home": false,
      "done": false,
@@ -1542,7 +1542,7 @@
      "score": ""
     },
     {
-     "date": "2026-10-17T04:00Z",
+     "date": "2026-10-17T19:30Z",
      "opp": "Georgia Tech",
      "home": true,
      "done": false,
@@ -1642,7 +1642,7 @@
      "score": ""
     },
     {
-     "date": "2026-10-17T04:00Z",
+     "date": "2026-10-17T19:30Z",
      "opp": "Tennessee",
      "home": false,
      "done": false,
@@ -1724,7 +1724,7 @@
      "score": "41-13"
     },
     {
-     "date": "2026-10-17T04:00Z",
+     "date": "2026-10-17T23:00Z",
      "opp": "Florida St",
      "home": true,
      "done": false,
@@ -1906,7 +1906,7 @@
      "score": "25-16"
     },
     {
-     "date": "2026-10-17T04:00Z",
+     "date": "2026-10-17T16:00Z",
      "opp": "Virginia",
      "home": true,
      "done": false,
@@ -1988,7 +1988,7 @@
      "score": ""
     },
     {
-     "date": "2026-10-17T04:00Z",
+     "date": "2026-10-17T19:30Z",
      "opp": "E Michigan",
      "home": false,
      "done": false,
@@ -2070,7 +2070,7 @@
      "score": ""
     },
     {
-     "date": "2026-10-17T04:00Z",
+     "date": "2026-10-17T17:30Z",
      "opp": "C Michigan",
      "home": false,
      "done": false,
