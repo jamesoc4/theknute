@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-12T13:54:09.774Z",
+ "updated": "2026-10-13T13:11:19.899Z",
  "nd": {
   "points": 264,
   "games": 6,
@@ -49,7 +49,7 @@
      "score": ""
     },
     {
-     "date": "2026-10-24T04:00Z",
+     "date": "2026-10-24T19:30Z",
      "opp": "Ball State",
      "home": false,
      "done": false,
@@ -677,7 +677,7 @@
      "score": ""
     },
     {
-     "date": "2026-10-24T04:00Z",
+     "date": "2026-10-24T23:30Z",
      "opp": "Texas",
      "home": false,
      "done": false,
@@ -759,7 +759,7 @@
      "score": ""
     },
     {
-     "date": "2026-10-24T04:00Z",
+     "date": "2026-10-24T19:30Z",
      "opp": "Buffalo",
      "home": false,
      "done": false,
@@ -841,7 +841,7 @@
      "score": ""
     },
     {
-     "date": "2026-10-24T04:00Z",
+     "date": "2026-10-24T17:00Z",
      "opp": "C Michigan",
      "home": false,
      "done": false,
@@ -1014,7 +1014,7 @@
      "score": ""
     },
     {
-     "date": "2026-10-24T04:00Z",
+     "date": "2026-10-24T20:00Z",
      "opp": "E Michigan",
      "home": true,
      "done": false,
@@ -1278,7 +1278,7 @@
      "score": "6-27"
     },
     {
-     "date": "2026-10-24T04:00Z",
+     "date": "2026-10-24T19:30Z",
      "opp": "Alabama",
      "home": false,
      "done": false,
@@ -1360,7 +1360,7 @@
      "score": ""
     },
     {
-     "date": "2026-10-24T04:00Z",
+     "date": "2026-10-24T23:30Z",
      "opp": "Ole Miss",
      "home": true,
      "done": false,
@@ -1651,7 +1651,7 @@
      "score": ""
     },
     {
-     "date": "2026-10-24T04:00Z",
+     "date": "2026-10-24T19:30Z",
      "opp": "Texas A&M",
      "home": true,
      "done": false,
@@ -1733,7 +1733,7 @@
      "score": ""
     },
     {
-     "date": "2026-10-24T04:00Z",
+     "date": "2026-10-24T16:00Z",
      "opp": "Pitt",
      "home": true,
      "done": false,
@@ -1915,7 +1915,7 @@
      "score": ""
     },
     {
-     "date": "2026-10-24T04:00Z",
+     "date": "2026-10-24T16:00Z",
      "opp": "California",
      "home": true,
      "done": false,
@@ -1997,7 +1997,7 @@
      "score": ""
     },
     {
-     "date": "2026-10-24T04:00Z",
+     "date": "2026-10-24T16:00Z",
      "opp": "W Michigan",
      "home": true,
      "done": false,
@@ -2079,7 +2079,7 @@
      "score": ""
     },
     {
-     "date": "2026-10-24T04:00Z",
+     "date": "2026-10-24T16:00Z",
      "opp": "Toledo",
      "home": false,
      "done": false,
