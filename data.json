@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-13T13:11:19.899Z",
+ "updated": "2026-10-14T10:51:45.251Z",
  "nd": {
   "points": 264,
   "games": 6,
@@ -131,7 +131,7 @@
      "score": "31-23"
     },
     {
-     "date": "2026-10-24T04:00Z",
+     "date": "2026-10-24T23:30Z",
      "opp": "Wisconsin",
      "home": false,
      "done": false,
@@ -313,7 +313,7 @@
      "score": ""
     },
     {
-     "date": "2026-10-24T04:00Z",
+     "date": "2026-10-24T16:00Z",
      "opp": "Michigan",
      "home": false,
      "done": false,
@@ -577,7 +577,7 @@
      "score": ""
     },
     {
-     "date": "2026-10-24T04:00Z",
+     "date": "2026-10-24T16:00Z",
      "opp": "Indiana",
      "home": true,
      "done": false,
