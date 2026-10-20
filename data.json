@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-19T11:35:02.274Z",
+ "updated": "2026-10-20T10:39:37.891Z",
  "nd": {
   "points": 288,
   "games": 7,
@@ -140,7 +140,7 @@
      "score": ""
     },
     {
-     "date": "2026-10-31T04:00Z",
+     "date": "2026-10-31T23:30Z",
      "opp": "Ohio State",
      "home": true,
      "done": false,
@@ -322,7 +322,7 @@
      "score": ""
     },
     {
-     "date": "2026-10-31T04:00Z",
+     "date": "2026-10-31T19:30Z",
      "opp": "Minnesota",
      "home": true,
      "done": false,
@@ -413,7 +413,7 @@
      "score": "34-26"
     },
     {
-     "date": "2026-10-31T04:00Z",
+     "date": "2026-10-31T19:15Z",
      "opp": "Stanford",
      "home": true,
      "done": false,
@@ -586,7 +586,7 @@
      "score": ""
     },
     {
-     "date": "2026-10-31T04:00Z",
+     "date": "2026-10-31T16:30Z",
      "opp": "Rutgers",
      "home": false,
      "done": false,
@@ -686,7 +686,7 @@
      "score": ""
     },
     {
-     "date": "2026-10-31T04:00Z",
+     "date": "2026-10-31T16:45Z",
      "opp": "Auburn",
      "home": true,
      "done": false,
@@ -932,7 +932,7 @@
      "score": "19-15"
     },
     {
-     "date": "2026-10-31T04:00Z",
+     "date": "2026-10-31T23:30Z",
      "opp": "USC",
      "home": false,
      "done": false,
@@ -1196,7 +1196,7 @@
      "score": ""
     },
     {
-     "date": "2026-10-31T04:00Z",
+     "date": "2026-10-31T23:00Z",
      "opp": "Florida St",
      "home": false,
      "done": false,
@@ -1369,7 +1369,7 @@
      "score": ""
     },
     {
-     "date": "2026-10-31T04:00Z",
+     "date": "2026-10-31T23:30Z",
      "opp": "Mississippi St",
      "home": true,
      "done": false,
@@ -1469,7 +1469,7 @@
      "score": ""
     },
     {
-     "date": "2026-10-31T04:00Z",
+     "date": "2026-10-31T19:45Z",
      "opp": "Wake Forest",
      "home": false,
      "done": false,
@@ -1742,7 +1742,7 @@
      "score": ""
     },
     {
-     "date": "2026-10-31T04:00Z",
+     "date": "2026-10-31T23:30Z",
      "opp": "North Carolina",
      "home": false,
      "done": false,
@@ -1924,7 +1924,7 @@
      "score": ""
     },
     {
-     "date": "2026-10-31T04:00Z",
+     "date": "2026-10-31T16:00Z",
      "opp": "Syracuse",
      "home": false,
      "done": false,
