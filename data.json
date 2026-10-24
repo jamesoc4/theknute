@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-23T10:42:52.196Z",
+ "updated": "2026-10-24T09:59:13.169Z",
  "nd": {
   "points": 288,
   "games": 7,
@@ -1421,7 +1421,7 @@
    "name": "Virginia",
    "conf": "ACC",
    "w": 2,
-   "l": 2,
+   "l": 3,
    "games": [
     {
      "date": "2026-08-29T19:30Z",
@@ -1463,10 +1463,10 @@
      "date": "2026-10-23T23:00Z",
      "opp": "Duke",
      "home": true,
-     "done": false,
+     "done": true,
      "win": false,
-     "loss": false,
-     "score": ""
+     "loss": true,
+     "score": "16-19"
     },
     {
      "date": "2026-10-31T19:45Z",
