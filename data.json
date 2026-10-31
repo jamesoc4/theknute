@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-30T11:52:07.740Z",
+ "updated": "2026-10-31T11:25:53.987Z",
  "nd": {
   "points": 288,
   "games": 7,
@@ -9,7 +9,7 @@
   "16": {
    "name": "Sacramento State",
    "conf": "MAC",
-   "w": 0,
+   "w": 1,
    "l": 5,
    "games": [
     {
@@ -61,10 +61,10 @@
      "date": "2026-10-31T02:30Z",
      "opp": "Kent State",
      "home": true,
-     "done": false,
-     "win": false,
+     "done": true,
+     "win": true,
      "loss": false,
-     "score": ""
+     "score": "31-10"
     },
     {
      "date": "2026-11-05T00:00Z",
