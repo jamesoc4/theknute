@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-04T13:28:58.753Z",
+ "updated": "2026-11-05T13:43:23.063Z",
  "nd": {
   "points": 323,
   "games": 8,
@@ -10,7 +10,7 @@
    "name": "Sacramento State",
    "conf": "MAC",
    "w": 1,
-   "l": 5,
+   "l": 6,
    "games": [
     {
      "date": "2026-08-29T22:30Z",
@@ -70,10 +70,10 @@
      "date": "2026-11-05T00:00Z",
      "opp": "Toledo",
      "home": true,
-     "done": false,
+     "done": true,
      "win": false,
-     "loss": false,
-     "score": ""
+     "loss": true,
+     "score": "17-20"
     },
     {
      "date": "2026-11-12T00:30Z",
@@ -1966,7 +1966,7 @@
   "2649": {
    "name": "Toledo",
    "conf": "MAC",
-   "w": 3,
+   "w": 4,
    "l": 1,
    "games": [
     {
@@ -2009,10 +2009,10 @@
      "date": "2026-11-05T00:00Z",
      "opp": "Sacramento St",
      "home": false,
-     "done": false,
-     "win": false,
+     "done": true,
+     "win": true,
      "loss": false,
-     "score": ""
+     "score": "20-17"
     },
     {
      "date": "2026-11-11T05:00Z",
