@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-08T12:27:35.204Z",
+ "updated": "2026-11-09T14:42:51.071Z",
  "nd": {
   "points": 354,
   "games": 9,
@@ -249,7 +249,7 @@
      "score": "42-7"
     },
     {
-     "date": "2026-11-14T05:00Z",
+     "date": "2026-11-14T20:30Z",
      "opp": "Missouri",
      "home": true,
      "done": false,
@@ -431,7 +431,7 @@
      "score": "44-17"
     },
     {
-     "date": "2026-11-14T05:00Z",
+     "date": "2026-11-15T00:00Z",
      "opp": "North Carolina",
      "home": false,
      "done": false,
@@ -513,7 +513,7 @@
      "score": "13-31"
     },
     {
-     "date": "2026-11-14T05:00Z",
+     "date": "2026-11-15T00:30Z",
      "opp": "Texas",
      "home": true,
      "done": false,
@@ -704,7 +704,7 @@
      "score": "7-42"
     },
     {
-     "date": "2026-11-14T05:00Z",
+     "date": "2026-11-14T21:15Z",
      "opp": "Oklahoma",
      "home": false,
      "done": false,
@@ -1296,7 +1296,7 @@
      "score": "9-17"
     },
     {
-     "date": "2026-11-14T05:00Z",
+     "date": "2026-11-14T20:00Z",
      "opp": "Tennessee",
      "home": true,
      "done": false,
@@ -1387,7 +1387,7 @@
      "score": "34-20"
     },
     {
-     "date": "2026-11-14T05:00Z",
+     "date": "2026-11-15T00:30Z",
      "opp": "LSU",
      "home": false,
      "done": false,
@@ -1569,7 +1569,7 @@
      "score": "28-51"
     },
     {
-     "date": "2026-11-14T05:00Z",
+     "date": "2026-11-15T00:30Z",
      "opp": "Stanford",
      "home": true,
      "done": false,
