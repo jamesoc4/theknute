@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-10T13:57:38.268Z",
+ "updated": "2026-11-11T13:13:04.758Z",
  "nd": {
   "points": 354,
   "games": 9,
@@ -728,7 +728,7 @@
   "189": {
    "name": "Bowling Green",
    "conf": "MAC",
-   "w": 2,
+   "w": 3,
    "l": 3,
    "games": [
     {
@@ -780,10 +780,10 @@
      "date": "2026-11-11T00:00Z",
      "opp": "Kent State",
      "home": true,
-     "done": false,
-     "win": false,
+     "done": true,
+     "win": true,
      "loss": false,
-     "score": ""
+     "score": "33-28"
     },
     {
      "date": "2026-11-21T00:30Z",
@@ -810,7 +810,7 @@
   "193": {
    "name": "Miami (OH)",
    "conf": "MAC",
-   "w": 3,
+   "w": 4,
    "l": 2,
    "games": [
     {
@@ -862,10 +862,10 @@
      "date": "2026-11-11T01:00Z",
      "opp": "Ohio",
      "home": true,
-     "done": false,
-     "win": false,
+     "done": true,
+     "win": true,
      "loss": false,
-     "score": ""
+     "score": "34-17"
     },
     {
      "date": "2026-11-18T00:00Z",
@@ -984,7 +984,7 @@
    "name": "Ohio",
    "conf": "MAC",
    "w": 5,
-   "l": 0,
+   "l": 1,
    "games": [
     {
      "date": "2026-10-03T19:30Z",
@@ -1035,10 +1035,10 @@
      "date": "2026-11-11T01:00Z",
      "opp": "Miami OH",
      "home": false,
-     "done": false,
+     "done": true,
      "win": false,
-     "loss": false,
-     "score": ""
+     "loss": true,
+     "score": "17-34"
     },
     {
      "date": "2026-11-18T00:00Z",
@@ -1132,7 +1132,7 @@
      "score": ""
     },
     {
-     "date": "2026-11-21T05:00Z",
+     "date": "2026-11-21T20:30Z",
      "opp": "Rutgers",
      "home": true,
      "done": false,
@@ -2048,7 +2048,7 @@
   "2711": {
    "name": "Western Michigan",
    "conf": "MAC",
-   "w": 4,
+   "w": 5,
    "l": 1,
    "games": [
     {
@@ -2100,10 +2100,10 @@
      "date": "2026-11-11T00:00Z",
      "opp": "Akron",
      "home": false,
-     "done": false,
-     "win": false,
+     "done": true,
+     "win": true,
      "loss": false,
-     "score": ""
+     "score": "42-14"
     },
     {
      "date": "2026-11-18T00:00Z",
