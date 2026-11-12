@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-11T13:13:04.758Z",
+ "updated": "2026-11-12T14:16:34.039Z",
  "nd": {
   "points": 354,
   "games": 9,
@@ -10,7 +10,7 @@
    "name": "Sacramento State",
    "conf": "MAC",
    "w": 1,
-   "l": 6,
+   "l": 7,
    "games": [
     {
      "date": "2026-08-29T22:30Z",
@@ -79,10 +79,10 @@
      "date": "2026-11-12T00:30Z",
      "opp": "C Michigan",
      "home": false,
-     "done": false,
+     "done": true,
      "win": false,
-     "loss": false,
-     "score": ""
+     "loss": true,
+     "score": "7-28"
     }
    ],
    "espnName": "Sacramento State Hornets",
@@ -1966,7 +1966,7 @@
   "2649": {
    "name": "Toledo",
    "conf": "MAC",
-   "w": 4,
+   "w": 5,
    "l": 1,
    "games": [
     {
@@ -2018,10 +2018,10 @@
      "date": "2026-11-12T00:30Z",
      "opp": "UMass",
      "home": true,
-     "done": false,
-     "win": false,
+     "done": true,
+     "win": true,
      "loss": false,
-     "score": ""
+     "score": "24-0"
     },
     {
      "date": "2026-11-21T00:30Z",
@@ -2106,7 +2106,7 @@
      "score": "42-14"
     },
     {
-     "date": "2026-11-18T00:00Z",
+     "date": "2026-11-17T23:00Z",
      "opp": "E Michigan",
      "home": true,
      "done": false,
