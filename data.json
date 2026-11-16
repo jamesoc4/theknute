@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-15T13:10:39.612Z",
+ "updated": "2026-11-16T14:18:33.289Z",
  "nd": {
   "points": 395,
   "games": 10,
@@ -440,7 +440,7 @@
      "score": "16-14"
     },
     {
-     "date": "2026-11-21T05:00Z",
+     "date": "2026-11-22T00:30Z",
      "opp": "Pitt",
      "home": true,
      "done": false,
@@ -638,7 +638,7 @@
    "name": "Ole Miss",
    "conf": "SEC",
    "w": 4,
-   "l": 3,
+   "l": 4,
    "games": [
     {
      "date": "2026-09-19T23:30Z",
@@ -707,10 +707,10 @@
      "date": "2026-11-15T18:00Z",
      "opp": "Oklahoma",
      "home": false,
-     "done": false,
+     "done": true,
      "win": false,
-     "loss": false,
-     "score": ""
+     "loss": true,
+     "score": "17-24"
     },
     {
      "date": "2026-11-27T17:00Z",
@@ -1305,7 +1305,7 @@
      "score": "7-22"
     },
     {
-     "date": "2026-11-21T17:00Z",
+     "date": "2026-11-21T20:45Z",
      "opp": "Oklahoma",
      "home": false,
      "done": false,
@@ -1578,7 +1578,7 @@
      "score": "22-40"
     },
     {
-     "date": "2026-11-21T05:00Z",
+     "date": "2026-11-22T00:00Z",
      "opp": "Miami",
      "home": false,
      "done": false,
@@ -1760,7 +1760,7 @@
      "score": "36-25"
     },
     {
-     "date": "2026-11-21T05:00Z",
+     "date": "2026-11-22T00:00Z",
      "opp": "Virginia Tech",
      "home": true,
      "done": false,
