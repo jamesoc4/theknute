@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-16T14:18:33.289Z",
+ "updated": "2026-11-17T15:10:46.300Z",
  "nd": {
   "points": 395,
   "games": 10,
@@ -167,7 +167,7 @@
      "score": ""
     },
     {
-     "date": "2026-11-28T05:00Z",
+     "date": "2026-11-28T20:30Z",
      "opp": "UCLA",
      "home": false,
      "done": false,
@@ -795,7 +795,7 @@
      "score": ""
     },
     {
-     "date": "2026-11-28T17:00Z",
+     "date": "2026-11-28T20:30Z",
      "opp": "UMass",
      "home": true,
      "done": false,
@@ -1141,7 +1141,7 @@
      "score": ""
     },
     {
-     "date": "2026-11-28T05:00Z",
+     "date": "2026-11-28T20:30Z",
      "opp": "Maryland",
      "home": false,
      "done": false,
@@ -1496,7 +1496,7 @@
      "score": ""
     },
     {
-     "date": "2026-11-28T05:00Z",
+     "date": "2026-11-28T20:00Z",
      "opp": "Virginia Tech",
      "home": false,
      "done": false,
@@ -1587,7 +1587,7 @@
      "score": ""
     },
     {
-     "date": "2026-11-28T05:00Z",
+     "date": "2026-11-28T20:00Z",
      "opp": "Virginia",
      "home": true,
      "done": false,
@@ -1769,7 +1769,7 @@
      "score": ""
     },
     {
-     "date": "2026-11-28T05:00Z",
+     "date": "2026-11-28T17:00Z",
      "opp": "Boston College",
      "home": true,
      "done": false,
