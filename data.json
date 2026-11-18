@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-17T15:10:46.300Z",
+ "updated": "2026-11-18T14:48:57.251Z",
  "nd": {
   "points": 395,
   "games": 10,
@@ -810,7 +810,7 @@
   "193": {
    "name": "Miami (OH)",
    "conf": "MAC",
-   "w": 4,
+   "w": 5,
    "l": 2,
    "games": [
     {
@@ -871,10 +871,10 @@
      "date": "2026-11-18T00:00Z",
      "opp": "Kent State",
      "home": false,
-     "done": false,
-     "win": false,
+     "done": true,
+     "win": true,
      "loss": false,
-     "score": ""
+     "score": "20-3"
     },
     {
      "date": "2026-11-25T00:00Z",
@@ -983,7 +983,7 @@
   "195": {
    "name": "Ohio",
    "conf": "MAC",
-   "w": 5,
+   "w": 6,
    "l": 1,
    "games": [
     {
@@ -1044,10 +1044,10 @@
      "date": "2026-11-18T00:00Z",
      "opp": "Ball State",
      "home": true,
-     "done": false,
-     "win": false,
+     "done": true,
+     "win": true,
      "loss": false,
-     "score": ""
+     "score": "35-28"
     },
     {
      "date": "2026-11-27T17:00Z",
@@ -2048,7 +2048,7 @@
   "2711": {
    "name": "Western Michigan",
    "conf": "MAC",
-   "w": 5,
+   "w": 6,
    "l": 1,
    "games": [
     {
@@ -2109,10 +2109,10 @@
      "date": "2026-11-17T23:00Z",
      "opp": "E Michigan",
      "home": true,
-     "done": false,
-     "win": false,
+     "done": true,
+     "win": true,
      "loss": false,
-     "score": ""
+     "score": "34-27"
     },
     {
      "date": "2026-11-25T00:00Z",
