@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-20T14:36:36.903Z",
+ "updated": "2026-11-21T13:54:20.903Z",
  "nd": {
   "points": 395,
   "games": 10,
@@ -729,7 +729,7 @@
    "name": "Bowling Green",
    "conf": "MAC",
    "w": 3,
-   "l": 3,
+   "l": 4,
    "games": [
     {
      "date": "2026-10-03T19:30Z",
@@ -789,10 +789,10 @@
      "date": "2026-11-21T00:30Z",
      "opp": "Toledo",
      "home": false,
-     "done": false,
+     "done": true,
      "win": false,
-     "loss": false,
-     "score": ""
+     "loss": true,
+     "score": "0-19"
     },
     {
      "date": "2026-11-28T20:30Z",
@@ -1156,7 +1156,7 @@
   "228": {
    "name": "Clemson",
    "conf": "ACC",
-   "w": 4,
+   "w": 5,
    "l": 3,
    "games": [
     {
@@ -1226,10 +1226,10 @@
      "date": "2026-11-21T00:30Z",
      "opp": "Duke",
      "home": false,
-     "done": false,
-     "win": false,
+     "done": true,
+     "win": true,
      "loss": false,
-     "score": ""
+     "score": "20-10"
     }
    ],
    "espnName": "Clemson Tigers",
@@ -1784,7 +1784,7 @@
   "2483": {
    "name": "Oregon",
    "conf": "B1G",
-   "w": 5,
+   "w": 6,
    "l": 2,
    "games": [
     {
@@ -1854,10 +1854,10 @@
      "date": "2026-11-21T01:00Z",
      "opp": "Michigan St",
      "home": false,
-     "done": false,
-     "win": false,
+     "done": true,
+     "win": true,
      "loss": false,
-     "score": ""
+     "score": "45-7"
     },
     {
      "date": "2026-11-28T05:00Z",
@@ -1966,7 +1966,7 @@
   "2649": {
    "name": "Toledo",
    "conf": "MAC",
-   "w": 5,
+   "w": 6,
    "l": 1,
    "games": [
     {
@@ -2027,10 +2027,10 @@
      "date": "2026-11-21T00:30Z",
      "opp": "Bowling Green",
      "home": true,
-     "done": false,
-     "win": false,
+     "done": true,
+     "win": true,
      "loss": false,
-     "score": ""
+     "score": "19-0"
     },
     {
      "date": "2026-11-27T17:00Z",
